@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="1055.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.GuiController">
+   <children>
+      <HBox layoutY="55.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="1055.0" spacing="10.0" style="-fx-background-color: #f2f2f2;">
+         <children>
+            <VBox prefHeight="464.0" prefWidth="477.0" spacing="5.0">
+               <children>
+                  <Label text="Address To Check:" underline="true">
+                     <font>
+                        <Font name="Arial Bold" size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="2.0" top="3.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Add new address">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="2.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="38.0" prefWidth="340.0">
+                     <children>
+                        <TextField fx:id="tf_newAddress" prefWidth="151.0" style="-fx-background-color: white; -fx-border-color: #4d94ff;">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin></TextField>
+                        <Button fx:id="btn_addToList" mnemonicParsing="false" onAction="#addToList" style="-fx-background-color: #4472C4; -fx-border-color: #2b4d88; -fx-border-radius: 5px; -fx-background-radius: 8px;" text="Add to list" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <VBox fx:id="vb_uploadFile" alignment="CENTER" onMouseClicked="#uploadFile" prefHeight="45.0" prefWidth="68.0" style="-fx-border-color: #4d94ff;">
+                           <children>
+                              <Label text="Upload file">
+                                 <font>
+                                    <Font name="Arial" size="12.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="30.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@fileupload_120150.png" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ImageView>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="25.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="2.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <VBox prefHeight="179.0" prefWidth="340.0">
+                     <children>
+                        <TableView fx:id="tv_address" prefHeight="200.0" prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets left="2.0" />
+                           </VBox.margin>
+                        </TableView>
+                     </children>
+                  </VBox>
+                  <HBox spacing="3.0">
+                     <VBox.margin>
+                        <Insets left="2.0" />
+                     </VBox.margin>
+                     <children>
+                        <Button fx:id="btn_editRow" mnemonicParsing="false" onAction="#editRow" style="-fx-background-color: #4472C4; -fx-border-color: #2b4d88; -fx-border-radius: 5px; -fx-background-radius: 8px;" text="Edit " textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0">
+                                 <image>
+                                    <Image url="@edit.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btn_removeRow" mnemonicParsing="false" onAction="#removeRow" style="-fx-background-color: #4472C4; -fx-border-color: #2b4d88; -fx-border-radius: 5px; -fx-background-radius: 8px;" text="Remove " textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0">
+                                 <image>
+                                    <Image url="@trash.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btn_clearTable" mnemonicParsing="false" onAction="#clearTable" style="-fx-background-color: #4472C4; -fx-border-color: #2b4d88; -fx-border-radius: 5px; -fx-background-radius: 8px;" text="Clear table" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="182.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0">
+                                 <image>
+                                    <Image url="@table_delete2.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label text="Log:">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="2.0" top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextArea fx:id="ta_log" prefHeight="83.0" prefWidth="338.0" style="-fx-border-color: black;">
+                     <VBox.margin>
+                        <Insets left="2.0" />
+                     </VBox.margin>
+                  </TextArea>
+               </children>
+            </VBox>
+            <Separator orientation="VERTICAL" prefHeight="458.0" prefWidth="0.0" />
+            <VBox prefHeight="464.0" prefWidth="552.0">
+               <children>
+                  <AnchorPane prefHeight="103.0" prefWidth="341.0">
+                     <children>
+                        <Button fx:id="btn_scan" layoutX="407.0" layoutY="65.0" mnemonicParsing="false" onAction="#scanAddresses" prefHeight="28.0" prefWidth="138.0" style="-fx-background-color: #4472C4; -fx-border-color: #2b4d88; -fx-border-radius: 5px; -fx-background-radius: 8px;" text="Scan" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Button>
+                        <Label layoutY="1.0" text="Report Result:" underline="true" AnchorPane.topAnchor="1.0">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <TableView fx:id="tv_results" prefHeight="224.0" prefWidth="527.0">
+                     <VBox.margin>
+                        <Insets right="2.0" top="5.0" />
+                     </VBox.margin>
+                  </TableView>
+                  <AnchorPane>
+                     <children>
+                        <Button fx:id="btn_saveResults" layoutX="414.0" layoutY="2.0" mnemonicParsing="false" onAction="#saveResults" style="-fx-background-color: #4472C4; -fx-border-color: #2b4d88; -fx-border-radius: 5px; -fx-background-radius: 8px;" text="Save Report" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="29.0">
+                                 <image>
+                                    <Image url="@Excel_2013_23480.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="6.0" />
+                     </VBox.margin>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Label layoutX="312.0" layoutY="-2.0" prefHeight="47.0" prefWidth="351.0" text="Abuse Address Checker" textAlignment="CENTER" textFill="#0070c0" underline="true">
+         <font>
+            <Font name="Arial Bold" size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
